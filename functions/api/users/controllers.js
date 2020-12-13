@@ -99,11 +99,3 @@ module.exports = {
     return res.status(200).json({ success: true, data: [] });
   },
 };
-
-// module.exports = {
-//   getAll: this.getAll,
-//   getById: this.getById,
-//   //   create,
-//   //   update,
-//   //   deleteById,
-// };
