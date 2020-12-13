@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "c036c4d3-7424-44fc-a983-a04a1d4b3ed2",
+		"name": "BossBus-AUTH-CRUD-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Secured Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"james@grr.la\",\n    \"password\": \"aaaaaa\",\n    \"returnSecureToken\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA2z5Nc1Rg1irZAQtkFERTmf_dMWLweYRQ",
+					"protocol": "https",
+					"host": [
+						"identitytoolkit",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts:signUp"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyA2z5Nc1Rg1irZAQtkFERTmf_dMWLweYRQ"
+						}
+					]
+				},
+				"description": "Get secured Token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NmFhNzRjODFiZTYwYjI5NDg1NWE5YTVlZTliODY5OGUyYWJlYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC1jcnVkLWFwaSIsImF1ZCI6ImF1dGgtY3J1ZC1hcGkiLCJhdXRoX3RpbWUiOjE2MDc4Njc2MTksInVzZXJfaWQiOiJURU9aN0ljUnJZV1pzTnNiM0xVWGN6OTFXeEkyIiwic3ViIjoiVEVPWjdJY1JyWVdac05zYjNMVVhjejkxV3hJMiIsImlhdCI6MTYwNzg2NzYxOSwiZXhwIjoxNjA3ODcxMjE5LCJlbWFpbCI6ImphbWV6QGdyci5sYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYW1lekBncnIubGEiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CwqYtS5urXhugyb51iAHMN8jUubbo_mrRdrmDEHmlQdWd2yLv8emnQrFSzeZvxBs8oEbP1AH6phfcMPGKHJOOlzCEN_HMow5yZn6CSHlZkINvRFgiXa2y_ik-XrM_4apWdB8vUag1Rwy8xkkmgwBrjW3n9E8ZrR2TApXsQMfd7kMJxYZ5H9HCGPeUo24NDiNZQJ6swRRZkCyS4Yja5kybycxuj_Pb2vkci-8i78fMYQR_y_5C78Y_Vi7x8Iz49JbevvYiCtjoxWhXGBJa5JEVOio2VaDc5hIJqfpcdrrAALFDRLO2fd3BU2cOmDYvT-SX2fxP2CeqlR7qTiqD_zfyQ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane\",\n   \"lastName\": \"Casablanncava\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth-crud-api/us-central1/app/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth-crud-api",
+						"us-central1",
+						"app",
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User ById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NmFhNzRjODFiZTYwYjI5NDg1NWE5YTVlZTliODY5OGUyYWJlYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC1jcnVkLWFwaSIsImF1ZCI6ImF1dGgtY3J1ZC1hcGkiLCJhdXRoX3RpbWUiOjE2MDc4Njc2MTksInVzZXJfaWQiOiJURU9aN0ljUnJZV1pzTnNiM0xVWGN6OTFXeEkyIiwic3ViIjoiVEVPWjdJY1JyWVdac05zYjNMVVhjejkxV3hJMiIsImlhdCI6MTYwNzg2NzYxOSwiZXhwIjoxNjA3ODcxMjE5LCJlbWFpbCI6ImphbWV6QGdyci5sYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYW1lekBncnIubGEiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CwqYtS5urXhugyb51iAHMN8jUubbo_mrRdrmDEHmlQdWd2yLv8emnQrFSzeZvxBs8oEbP1AH6phfcMPGKHJOOlzCEN_HMow5yZn6CSHlZkINvRFgiXa2y_ik-XrM_4apWdB8vUag1Rwy8xkkmgwBrjW3n9E8ZrR2TApXsQMfd7kMJxYZ5H9HCGPeUo24NDiNZQJ6swRRZkCyS4Yja5kybycxuj_Pb2vkci-8i78fMYQR_y_5C78Y_Vi7x8Iz49JbevvYiCtjoxWhXGBJa5JEVOio2VaDc5hIJqfpcdrrAALFDRLO2fd3BU2cOmDYvT-SX2fxP2CeqlR7qTiqD_zfyQ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane\",\n   \"lastName\": \"Casablanncava\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth-crud-api/us-central1/app/api/v1/users/CfpvlM6dxHiJ6VpWydnX",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth-crud-api",
+						"us-central1",
+						"app",
+						"api",
+						"v1",
+						"users",
+						"CfpvlM6dxHiJ6VpWydnX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User ById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NmFhNzRjODFiZTYwYjI5NDg1NWE5YTVlZTliODY5OGUyYWJlYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC1jcnVkLWFwaSIsImF1ZCI6ImF1dGgtY3J1ZC1hcGkiLCJhdXRoX3RpbWUiOjE2MDc4Njc2MTksInVzZXJfaWQiOiJURU9aN0ljUnJZV1pzTnNiM0xVWGN6OTFXeEkyIiwic3ViIjoiVEVPWjdJY1JyWVdac05zYjNMVVhjejkxV3hJMiIsImlhdCI6MTYwNzg2NzYxOSwiZXhwIjoxNjA3ODcxMjE5LCJlbWFpbCI6ImphbWV6QGdyci5sYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYW1lekBncnIubGEiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CwqYtS5urXhugyb51iAHMN8jUubbo_mrRdrmDEHmlQdWd2yLv8emnQrFSzeZvxBs8oEbP1AH6phfcMPGKHJOOlzCEN_HMow5yZn6CSHlZkINvRFgiXa2y_ik-XrM_4apWdB8vUag1Rwy8xkkmgwBrjW3n9E8ZrR2TApXsQMfd7kMJxYZ5H9HCGPeUo24NDiNZQJ6swRRZkCyS4Yja5kybycxuj_Pb2vkci-8i78fMYQR_y_5C78Y_Vi7x8Iz49JbevvYiCtjoxWhXGBJa5JEVOio2VaDc5hIJqfpcdrrAALFDRLO2fd3BU2cOmDYvT-SX2fxP2CeqlR7qTiqD_zfyQ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane\",\n   \"lastName\": \"Casablanca\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth-crud-api/us-central1/app/api/v1/users/CfpvlM6dxHiJ6VpWydnX",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth-crud-api",
+						"us-central1",
+						"app",
+						"api",
+						"v1",
+						"users",
+						"CfpvlM6dxHiJ6VpWydnX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NmFhNzRjODFiZTYwYjI5NDg1NWE5YTVlZTliODY5OGUyYWJlYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC1jcnVkLWFwaSIsImF1ZCI6ImF1dGgtY3J1ZC1hcGkiLCJhdXRoX3RpbWUiOjE2MDc4Njc2MTksInVzZXJfaWQiOiJURU9aN0ljUnJZV1pzTnNiM0xVWGN6OTFXeEkyIiwic3ViIjoiVEVPWjdJY1JyWVdac05zYjNMVVhjejkxV3hJMiIsImlhdCI6MTYwNzg2NzYxOSwiZXhwIjoxNjA3ODcxMjE5LCJlbWFpbCI6ImphbWV6QGdyci5sYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYW1lekBncnIubGEiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CwqYtS5urXhugyb51iAHMN8jUubbo_mrRdrmDEHmlQdWd2yLv8emnQrFSzeZvxBs8oEbP1AH6phfcMPGKHJOOlzCEN_HMow5yZn6CSHlZkINvRFgiXa2y_ik-XrM_4apWdB8vUag1Rwy8xkkmgwBrjW3n9E8ZrR2TApXsQMfd7kMJxYZ5H9HCGPeUo24NDiNZQJ6swRRZkCyS4Yja5kybycxuj_Pb2vkci-8i78fMYQR_y_5C78Y_Vi7x8Iz49JbevvYiCtjoxWhXGBJa5JEVOio2VaDc5hIJqfpcdrrAALFDRLO2fd3BU2cOmDYvT-SX2fxP2CeqlR7qTiqD_zfyQ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane\",\n   \"lastName\": \"Casablanca\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth-crud-api/us-central1/app/api/v1/users/aSkGGKQudSyJ7qJuUANq",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth-crud-api",
+						"us-central1",
+						"app",
+						"api",
+						"v1",
+						"users",
+						"aSkGGKQudSyJ7qJuUANq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NmFhNzRjODFiZTYwYjI5NDg1NWE5YTVlZTliODY5OGUyYWJlYzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC1jcnVkLWFwaSIsImF1ZCI6ImF1dGgtY3J1ZC1hcGkiLCJhdXRoX3RpbWUiOjE2MDc4Njc2MTksInVzZXJfaWQiOiJURU9aN0ljUnJZV1pzTnNiM0xVWGN6OTFXeEkyIiwic3ViIjoiVEVPWjdJY1JyWVdac05zYjNMVVhjejkxV3hJMiIsImlhdCI6MTYwNzg2NzYxOSwiZXhwIjoxNjA3ODcxMjE5LCJlbWFpbCI6ImphbWV6QGdyci5sYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqYW1lekBncnIubGEiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CwqYtS5urXhugyb51iAHMN8jUubbo_mrRdrmDEHmlQdWd2yLv8emnQrFSzeZvxBs8oEbP1AH6phfcMPGKHJOOlzCEN_HMow5yZn6CSHlZkINvRFgiXa2y_ik-XrM_4apWdB8vUag1Rwy8xkkmgwBrjW3n9E8ZrR2TApXsQMfd7kMJxYZ5H9HCGPeUo24NDiNZQJ6swRRZkCyS4Yja5kybycxuj_Pb2vkci-8i78fMYQR_y_5C78Y_Vi7x8Iz49JbevvYiCtjoxWhXGBJa5JEVOio2VaDc5hIJqfpcdrrAALFDRLO2fd3BU2cOmDYvT-SX2fxP2CeqlR7qTiqD_zfyQ",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Morgan\",\n   \"lastName\": \"Freeman\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/auth-crud-api/us-central1/app/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"auth-crud-api",
+						"us-central1",
+						"app",
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
