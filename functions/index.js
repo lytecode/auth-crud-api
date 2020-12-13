@@ -3,6 +3,7 @@ const admin = require("firebase-admin");
 const cors = require("cors");
 const express = require("express");
 const Joi = require("joi");
+const authMiddleware = require("./middlewares/auth");
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -13,6 +14,7 @@ const app = express();
 //middleware
 app.use(cors());
 app.use(express.json());
+// app.use(authMiddleware);
 
 app.get("/", async (req, res) => {
   const userRef = await users.get();
@@ -38,7 +40,7 @@ app.get("/:id", async (req, res) => {
     .json({ success: true, data: [{ ...doc.data(), id: doc.id }] });
 });
 
-app.post("/", async (req, res) => {
+app.post("/", authMiddleware, async (req, res) => {
   //Validate request
   const schema = Joi.object({
     firstName: Joi.string().min(2),
